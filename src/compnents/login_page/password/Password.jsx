@@ -28,7 +28,8 @@ export default function Password() {
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
     if (values.password_input === "") {
-      error.password_input = "Password should not be empty";
+      error.password_input = "Password should not be empty" ;
+      
     } else if (!password_RegExp.test(values.password_input)) {
       const erdet = (
         <details>
@@ -56,25 +57,22 @@ export default function Password() {
         <div className="icon-div">
           <form onSubmit={handleValidation}>
             <input
+              onChange={handleChange}
+              placeholder="Phone number, email address"
+              className="custom-input inp"
+            />
+
+            <input
               name="password_input"
               onChange={handleChange}
               type={type}
-              placeholder="Enter password"
-              className="custom-input"
+              placeholder="Password"
+              className="custom-input inp"
             />
             {errors.password_input && (
-              <p style={{ color: "red" }}>{errors.password_input}</p>
-            )}
-
-            <input
-              name="confirm_password"
-              onChange={handleChange}
-              type={type}
-              placeholder="Confirm password"
-              className="custom-input"
-            />
-            {errors.confirm_password && (
-              <p style={{ color: "red" }}>{errors.confirm_password}</p>
+              <p style={{ color: "red", maxWidth: "400px" }}>
+                {errors.password_input}
+              </p>
             )}
 
             <div className="mt-4 mb-2 ">
