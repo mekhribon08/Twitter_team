@@ -50,7 +50,7 @@ export default function Search() {
           <img className="profile-img" src={profile2} alt="profile-img" />
           <span className="follow-wrap__nik">
             <h4>Shuhratbek</h4>
-            <h4>@mrshukhrat </h4>
+            <h4>@mrshukhrat001</h4>
           </span>
           <button className="btn-follow">Follow</button>
         </div>
